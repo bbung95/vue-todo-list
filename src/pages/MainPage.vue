@@ -4,6 +4,7 @@ import TextInput from "@/components/TextInput.vue";
 import TodoItem, { ITodo } from "@/components/TodoItem.vue";
 import { TODOLIST_KEY } from "@/constants/index";
 import { getStorage, setStorage } from "@/utils/localStorage";
+import FadeMotion from "@/components/motion/FadeMotion.vue";
 
 const inputValue = ref<string>("");
 const todos = ref<Array<ITodo>>(getStorage(TODOLIST_KEY));
@@ -44,15 +45,17 @@ watch(
     <TextInput v-model="inputValue" :handleAddTodo="handleAddTodo" />
     <div>
         <ul class="todo-list">
-            <TodoItem
-                v-for="todo in todos"
-                :key="todo.id"
-                :id="todo.id"
-                :text="todo.text"
-                :done="todo.done"
-                :handeOnClick="() => handleRemoveTodo(todo.id)"
-                :handleChecked="() => handleCheckedTodo(todo.id)"
-            />
+            <FadeMotion>
+                <TodoItem
+                    v-for="todo in todos"
+                    :key="todo.id"
+                    :id="todo.id"
+                    :text="todo.text"
+                    :done="todo.done"
+                    :handeOnClick="() => handleRemoveTodo(todo.id)"
+                    :handleChecked="() => handleCheckedTodo(todo.id)"
+                />
+            </FadeMotion>
         </ul>
     </div>
 </template>

@@ -17,7 +17,7 @@ const props = defineProps<Props>();
     <li class="item"><input class="check-box" type="checkbox" @change="handleChecked" :checked="done" /> {{ props.text }} <button @click="handeOnClick" class="button">X</button></li>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .item {
     list-style: none;
 
@@ -63,9 +63,9 @@ const props = defineProps<Props>();
     background-color: #ff5961;
 
     transition: all 0.1s;
-}
 
-.button:hover {
-    scale: 1.1;
+    &:hover {
+        scale: 1.1;
+    }
 }
 </style>

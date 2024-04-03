@@ -10,7 +10,7 @@ const model = defineModel();
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .input-box {
     width: 100%;
 
@@ -18,24 +18,24 @@ const model = defineModel();
 
     display: flex;
     flex-direction: row;
-}
 
-.input {
-    flex: 1;
+    & > .input {
+        flex: 1;
 
-    padding-left: 24px;
+        padding-left: 24px;
 
-    font-size: 1.8rem;
+        font-size: 1.8rem;
 
-    border: none;
-    border-top: 1px solid lightgrey;
-    border-left: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
-    border-radius: 12px 0 0 12px;
-}
+        border: none;
+        border-top: 1px solid lightgrey;
+        border-left: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        border-radius: 12px 0 0 12px;
 
-.input:focus {
-    outline: none;
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 .button {

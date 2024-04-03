@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .container {
     box-sizing: border-box;
 
